@@ -4,33 +4,79 @@
 header {
     display: grid;
     grid-template-columns: 20% auto;
+    grid-template-areas: "burger survival" "nav nav";
     padding: 10px;
+    background-color: white;
+    width:100%;
+
+    position: fixed;
+    top:0;
+
+    @include lg{
+        grid-template-areas:
+        "nav survival"
+    }
+
+    section:nth-child(1) {
+        grid-area: burger;
+        background-color: $white;
+        border: none;
+        outline: none;
+
+        @include lg{
+            display: none;
+        }
+    }
+
+    section:nth-child(2) {
+        padding: 10px;
+        grid-area: survival;
+
+
+        span{
+            display:flex;
+            padding: 10px;
+            justify-content:flex-end;
+            align-items: center;
+        }
+    }
 
     nav {
-        i {
-            font-size: rem-calc(30);
-            margin-top: 8px;
+        display:none !important;
+        grid-area: nav;
+        padding: 10px;
+        background-color: $charcoal;
+        @include lg{
+            display: block !important;
+            background-color: $charcole;
         }
+
     }
-
-    aside {
-        text-align: right;
-
-        a:link,
-        a:visited {
-            background-color: $sunflower;
-            border-radius: rem-calc(23);
-            color: $black;
-            display: inline-block;
-            font-size: rem-calc(18);
-            font-weight: 700;
-            padding: 13px 25px;
-        }
-
-        a:active,
-        a:hover {
-            background-color: $sunflower;
-            color: $white;
-        }
-    }
+    //     nav {
+    //         i {
+    //             font-size: rem-calc(30);
+    //             margin-top: 8px;
+    //         }
+    //     }
+    //
+    //     aside {
+    //         text-align: right;
+    //
+    //         a:link,
+    //         a:visited {
+    //             background-color: $sunflower;
+    //             border-radius: rem-calc(23);
+    //             color: $black;
+    //             display: inline-block;
+    //             font-size: rem-calc(18);
+    //             font-weight: 700;
+    //             padding: 13px 25px;
+    //         }
+    //
+    //         a:active,
+    //         a:hover {
+    //             background-color: $sunflower;
+    //             color: $white;
+    //         }
+    //     }
 }

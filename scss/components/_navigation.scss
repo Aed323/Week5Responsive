@@ -1,3 +1,71 @@
 /* =============
     Navigation
 ============= */
+header {
+    section:nth-child(2) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $sunflower;
+        height: 30px;
+        width: 30px;
+        border-radius: 100px;
+        color: $black;
+
+    }
+a{
+    span{
+        display: none;
+        @include lg{
+            display: inline-block;
+        }
+    }
+}
+    nav {
+        display:none;
+        ul {
+            @include lg{
+                display:flex;
+            }
+            li {
+                border-bottom: 1px solid $sunflower;
+
+                @include lg{
+                    border-bottom:none;
+                    border-right: 1px solid $black;
+                    padding:0 50px;
+                }
+            }
+        }
+
+        a:link,
+        a:visited {
+            color: $white;
+            font-family: 'Roboto Slab', serif;
+            font-size: rem-calc(20);
+            padding-bottom: 20px 0;
+            display: inline-block;
+
+            @include lg{
+                width: inherit;
+                height: inherit;
+                padding: 10px 20px;
+                border-radius: 20px;
+
+                i{
+                    margin-right: 10px;
+                }
+            }
+        }
+
+        a:active,
+        a:hover {
+            color:$sunflower;
+            }
+
+        li:last-child{
+            border:none;
+        }
+        }
+    }
+}
